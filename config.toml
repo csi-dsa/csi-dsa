@@ -3,10 +3,11 @@ languageCode = 'en-us'
 title = 'A handbook on Data Structures and Algorithms'
 theme = 'hugo-book'
 
+enableGitInfo = true
+
 [params]
   BookSection = "entries"
   BookSearch = true
   BookComments = false
   BookTheme = "auto"
-  enableGitInfo = true
-  BookLastChangeLink = true
+  BookRepo = "https://github.com/csi-dsa/csi-dsa"

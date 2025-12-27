@@ -1,21 +1,15 @@
 <link rel="stylesheet" href="{{ "css/lang-toggle.css" | relURL }}">
 
-
 <div class="flex align-center justify-between">
   <div class="flex align-center gap-2">
     <label for="menu-control">
       <img src="{{ partial "docs/icon" "menu" }}" class="book-icon"
            alt="{{ partial "docs/text/i18n" "Menu" }}" />
     </label>
-
     <h3>{{ partial "docs/title" . }}</h3>
   </div>
 
   <div class="flex align-center gap-2">
-    <button id="theme-toggle" class="theme-toggle" title="Toggle theme">
-      ☾
-    </button>
-
     <label for="toc-control">
       {{ if partial "docs/toc-show" . }}
         <img src="{{ partial "docs/icon" "toc" }}" class="book-icon"

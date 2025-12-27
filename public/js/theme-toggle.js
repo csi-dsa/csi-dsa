@@ -1,12 +1,13 @@
 (function () {
   const STORAGE_KEY = "book-theme";
-
-  const root = document.documentElement;
   const toggle = document.getElementById("theme-toggle");
   if (!toggle) return;
 
+  const body = document.body;
+
   function apply(theme) {
-    root.dataset.theme = theme;
+    body.classList.remove("light", "dark");
+    body.classList.add(theme);
     localStorage.setItem(STORAGE_KEY, theme);
     toggle.textContent = theme === "dark" ? "☀" : "☾";
   }
@@ -15,7 +16,7 @@
   if (saved) apply(saved);
 
   toggle.addEventListener("click", () => {
-    const current = root.dataset.theme === "dark" ? "dark" : "light";
+    const current = body.classList.contains("dark") ? "dark" : "light";
     apply(current === "dark" ? "light" : "dark");
   });
 })();
