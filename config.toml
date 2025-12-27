@@ -1,0 +1,11 @@
+baseURL = 'http://localhost/'
+languageCode = 'en-us'
+title = 'A handbook on Data Structures and Algorithms'
+theme = 'hugo-book'
+
+[params]
+  BookSection = "entries"
+  BookSearch = true
+  BookComments = false
+  BookTheme = "auto"
+  enableGitInfo = true

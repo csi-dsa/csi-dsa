@@ -1,0 +1,20 @@
+{{- $dir := .Page.File.Dir -}}
+{{- $codeDir := printf "content/%s/code" $dir -}}
+
+{{- if (fileExists $codeDir) -}}
+<div class="code-group">
+
+  <!-- language selector lives WITH the code -->
+  <div class="lang-selector hidden"></div>
+
+  {{- range sort (readDir $codeDir) "Name" -}}
+    {{- if eq (path.Ext .Name) ".md" -}}
+      {{- $lang := replace .Name ".md" "" -}}
+      <div class="code-block" data-lang="{{ $lang }}">
+        {{ readFile (printf "%s/%s" $codeDir .Name) | markdownify }}
+      </div>
+    {{- end -}}
+  {{- end -}}
+
+</div>
+{{- end -}}

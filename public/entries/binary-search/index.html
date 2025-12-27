@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Searches a sorted array in logarithmic time.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/entries/binary-search/">
+  <meta property="og:site_name" content="A handbook on Data Structures and Algorithms">
+  <meta property="og:title" content="Binary Search">
+  <meta property="og:description" content="Searches a sorted array in logarithmic time.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="entries">
+
+
+  <meta itemprop="name" content="Binary Search">
+  <meta itemprop="description" content="Searches a sorted array in logarithmic time.">
+  <meta itemprop="wordCount" content="17">
+
+<title>Binary Search | A handbook on Data Structures and Algorithms</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/entries/binary-search/">
+<link rel="stylesheet" href="/book.min.6970156cec683193d93c9c4edaf0d56574e4361df2e0c1be4f697ae81c3ba55f.css" integrity="sha256-aXAVbOxoMZPZPJxO2vDVZXTkNh3y4MG&#43;T2l66Bw7pV8=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.c7acc6a92e09c9f66063234d5229bfffcb30244d860684afab51058c612db4ac.js" integrity="sha256-x6zGqS4JyfZgYyNNUim//8swJE2GBoSvq1EFjGEttKw=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-algorithm">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>A handbook on Data Structures and Algorithms</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/entries/arrays/" class="">
+      Arrays</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/entries/binary-search/" class="active">
+      Binary Search</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/entries/linked-lists/" class="">
+      Linked Lists</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <link rel="stylesheet" href="/css/lang-toggle.css">
+
+
+<div class="flex align-center justify-between">
+  <div class="flex align-center gap-2">
+    <label for="menu-control">
+      <img src="/icons/menu.svg" class="book-icon"
+           alt="Menu" />
+    </label>
+
+    <h3>Binary Search</h3>
+  </div>
+
+  <div class="flex align-center gap-2">
+    <button id="theme-toggle" class="theme-toggle" title="Toggle theme">
+      ☾
+    </button>
+
+    <label for="toc-control">
+      
+        <img src="/icons/toc.svg" class="book-icon"
+             alt="Table of Contents" />
+      
+    </label>
+  </div>
+</div>
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#complexity-analysis">Complexity Analysis</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="overview">Overview<a class="anchor" href="#overview">#</a></h2>
+<p>Binary search divides the search space in half repeatedly.</p>
+<h2 id="complexity-analysis">Complexity Analysis<a class="anchor" href="#complexity-analysis">#</a></h2>
+<ul>
+<li>Time: O(log n)</li>
+<li>Space: O(1)</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/entries/arrays/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Arrays</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/entries/linked-lists/" class="flex align-center">
+        <span>Linked Lists</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+<script src="/js/lang-toggle.js"></script>
+<script src="/js/theme-toggle.js"></script>
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#complexity-analysis">Complexity Analysis</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

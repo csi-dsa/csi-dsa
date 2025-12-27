@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A contiguous memory data structure allowing indexed access.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/entries/arrays/">
+  <meta property="og:site_name" content="A handbook on Data Structures and Algorithms">
+  <meta property="og:title" content="Arrays">
+  <meta property="og:description" content="A contiguous memory data structure allowing indexed access.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="entries">
+
+
+  <meta itemprop="name" content="Arrays">
+  <meta itemprop="description" content="A contiguous memory data structure allowing indexed access.">
+  <meta itemprop="wordCount" content="103">
+
+<title>Arrays | A handbook on Data Structures and Algorithms</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/entries/arrays/">
+<link rel="stylesheet" href="/book.min.6970156cec683193d93c9c4edaf0d56574e4361df2e0c1be4f697ae81c3ba55f.css" integrity="sha256-aXAVbOxoMZPZPJxO2vDVZXTkNh3y4MG&#43;T2l66Bw7pV8=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.c7acc6a92e09c9f66063234d5229bfffcb30244d860684afab51058c612db4ac.js" integrity="sha256-x6zGqS4JyfZgYyNNUim//8swJE2GBoSvq1EFjGEttKw=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-concept">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>A handbook on Data Structures and Algorithms</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/entries/arrays/" class="active">
+      Arrays</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/entries/binary-search/" class="">
+      Binary Search</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/entries/linked-lists/" class="">
+      Linked Lists</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <link rel="stylesheet" href="/css/lang-toggle.css">
+
+
+<div class="flex align-center justify-between">
+  <div class="flex align-center gap-2">
+    <label for="menu-control">
+      <img src="/icons/menu.svg" class="book-icon"
+           alt="Menu" />
+    </label>
+
+    <h3>Arrays</h3>
+  </div>
+
+  <div class="flex align-center gap-2">
+    <button id="theme-toggle" class="theme-toggle" title="Toggle theme">
+      ☾
+    </button>
+
+    <label for="toc-control">
+      
+        <img src="/icons/toc.svg" class="book-icon"
+             alt="Table of Contents" />
+      
+    </label>
+  </div>
+</div>
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#core-idea">Core Idea</a></li>
+    <li><a href="#complexity-analysis">Complexity Analysis</a></li>
+    <li><a href="#code-snippet">Code snippet</a></li>
+    <li><a href="#core-idea-1">Core Idea</a></li>
+    <li><a href="#complexity-analysis-1">Complexity Analysis</a></li>
+    <li><a href="#code-snippet-1">Code snippet</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="overview">Overview<a class="anchor" href="#overview">#</a></h2>
+<p>Arrays are one of the simplest data structures.</p>
+<h2 id="core-idea">Core Idea<a class="anchor" href="#core-idea">#</a></h2>
+<p>Elements are stored in contiguous memory locations.</p>
+<h2 id="complexity-analysis">Complexity Analysis<a class="anchor" href="#complexity-analysis">#</a></h2>
+<ul>
+<li>Access: <span class="book-katex">\( O(1) \)</span><link rel="stylesheet" href="/katex/katex.min.css" /><script defer src="/katex/katex.min.js"></script><script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body, {&#34;delimiters&#34;:[{&#34;left&#34;:&#34;$$&#34;,&#34;right&#34;:&#34;$$&#34;,&#34;display&#34;:true},{&#34;left&#34;:&#34;\\(&#34;,&#34;right&#34;:&#34;\\)&#34;,&#34;display&#34;:false},{&#34;left&#34;:&#34;\\[&#34;,&#34;right&#34;:&#34;\\]&#34;,&#34;display&#34;:true}]});"></script></li>
+<li>Search: O(n)</li>
+</ul>
+<h2 id="code-snippet">Code snippet<a class="anchor" href="#code-snippet">#</a></h2>
+<div class="code-group">
+
+  
+  <div class="lang-selector hidden"></div><div class="code-block" data-lang="c">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> arr[<span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>};</span></span></code></pre></div>
+      </div><div class="code-block" data-lang="java">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> arr<span style="color:#f92672">[]</span> <span style="color:#f92672">=</span> {1, 2, 3};</span></span></code></pre></div>
+      </div><div class="code-block" data-lang="python">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span>arr <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]</span></span></code></pre></div>
+      </div><div class="code-block" data-lang="rust">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> arr : [<span style="color:#66d9ef">i32</span>; <span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>];</span></span></code></pre></div>
+      </div></div>
+<h2 id="core-idea-1">Core Idea<a class="anchor" href="#core-idea-1">#</a></h2>
+<p>Elements are stored in contiguous memory locations.</p>
+<h2 id="complexity-analysis-1">Complexity Analysis<a class="anchor" href="#complexity-analysis-1">#</a></h2>
+<ul>
+<li>Access: <span class="book-katex">\( O(1) \)</span></li>
+<li>Search: O(n)</li>
+</ul>
+<h2 id="code-snippet-1">Code snippet<a class="anchor" href="#code-snippet-1">#</a></h2>
+<div class="code-group">
+
+  
+  <div class="lang-selector hidden"></div><div class="code-block" data-lang="c">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> arr[<span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>};</span></span></code></pre></div>
+      </div><div class="code-block" data-lang="java">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> arr<span style="color:#f92672">[]</span> <span style="color:#f92672">=</span> {1, 2, 3};</span></span></code></pre></div>
+      </div><div class="code-block" data-lang="python">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span>arr <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]</span></span></code></pre></div>
+      </div><div class="code-block" data-lang="rust">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> arr : [<span style="color:#66d9ef">i32</span>; <span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>];</span></span></code></pre></div>
+      </div></div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+    </span>
+    <span>
+    
+      <a href="/entries/binary-search/" class="flex align-center">
+        <span>Binary Search</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+<script src="/js/lang-toggle.js"></script>
+<script src="/js/theme-toggle.js"></script>
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#core-idea">Core Idea</a></li>
+    <li><a href="#complexity-analysis">Complexity Analysis</a></li>
+    <li><a href="#code-snippet">Code snippet</a></li>
+    <li><a href="#core-idea-1">Core Idea</a></li>
+    <li><a href="#complexity-analysis-1">Complexity Analysis</a></li>
+    <li><a href="#code-snippet-1">Code snippet</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
