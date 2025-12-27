@@ -9,3 +9,4 @@ theme = 'hugo-book'
   BookComments = false
   BookTheme = "auto"
   enableGitInfo = true
+  BookLastChangeLink = true
